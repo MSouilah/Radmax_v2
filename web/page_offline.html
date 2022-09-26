@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>RaDMaX 2</title>
+        
+        <link rel="shortcut icon" href="img/icone_radmax_2.png"/>
+        <link href="css/styles.min.css" rel="stylesheet" />
+	    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" integrity="sha256-vVWLaw+oJWUE1vF5YgPFXFQAE9fUAh95JBR286xJ2sE=" crossorigin="anonymous"> -->
+        <link id="theme_for_bootstrap" rel="stylesheet" href="css/boostrap.min.css" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha256-fpJ2dG7m1wp12DYt3Y4gqhzooAjI45xmqeBbdY9jbQE=" crossorigin="anonymous"></script>   
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <script src="modules/chart.js/plug-in/chartjs-plugin-dragdata/2.2.1/chartjs-plugin-dragdata.min.js"></script> -->
+        <!-- <script src="modules/chart.js/plug-in/chartjs-plugin-zoom/1.2.0/chartjs-plugin-zoom.min.js"></script> -->
+        <!-- <script src="modules/chart.js/plug-in/chartjs-plugin-annotation/1.2.2/chartjs-plugin-annotation.min.js"></script> -->
+        
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-dragdata@2.2.3/dist/chartjs-plugin-dragdata.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js" integrity="sha512-HrwQrg8S/xLPE6Qwe7XOghA/FOxX+tuVF4TxbvS73/zKJSs/b1gVl/P4MsdfTFWYFYg/ISVNYIINcg35Xvr6QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.1/chartjs-plugin-zoom.min.js" integrity="sha512-klQv6lz2YR+MecyFYMFRuU2eAl8IPRo6zHnsc9n142TJuJHS8CG0ix4Oq9na9ceeg1u5EkBfZsFcV3U7J51iew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <link id="theme_for_tabulator" rel="stylesheet" href="modules/tabulator/css/tabulator_read.min.css" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/5.0.9/css/tabulator.min.css" integrity="sha512-qaf1zsTL18+yzIguEzlrIpvALTRTtcOk8pU5Pq+RF4/0kmH8SwVawi7Mkpx9g8yCJFT/y+pTMEzSLpOSVd8aZQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/5.3.2/css/tabulator_bulma.min.css" integrity="sha512-BSFYgcBVKAMd/NYpvvgkpvPEo70FujJikaamn769xgxIdKI0QO+zZCCY/aZuwGE6/pix/0hxWpVALJHIwF+GOw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+        <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js" integrity="sha256-CnZmNCHHUMy22/PJclCIISZ5Ib4MnUu+7ee5YNxtsZQ=" crossorigin="anonymous"></script>
+        <!-- <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/5.0.9/js/tabulator.min.js" integrity="sha512-6U/RAs2GmPf/qBF3fgczlKF+K9E6kgfYJMMrDsN0DxdYyPbXBD3f5JMA08LsXSeS4uzp4iNWP83n8W930ENBPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/5.3.2/js/tabulator.min.js" integrity="sha512-ZYT5mF6JagxBbvWACOkAtLZGF9RArodgil6cjileeX4ZOALVkn1tJ5Jmz4AbL3K2xFu7VRuXqKl1/khq7nSRZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <script src="/modules/mousetrap-1.6.5/mousetrap.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js" integrity="sha512-+Jg3Ynmj9hse704K48H6rBBI3jdNBjReRGBCxUWFfOz3yVurnJFWtAWssDAsGtzWYw89xFWPxShuj2T6E9EOpg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <link href="css/style_local.css" rel="stylesheet" />
+        <link href="css/modal_image.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed" onkeydown="isKeyPressed(event)">
+        <script src="/eel.js"></script>
+        <script src="modules/main_functions.min.js"></script>
+
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="/img/icone_radmax_2.png" width="35" height="35" alt="Radmax"> RaDMaX<sup>2</sup></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item dropdown d-none" id="menu_file_hide">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Files
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li><a class="dropdown-item" id="new_project" href="#">New project</a></li>
+                          <li><a class="dropdown-item" id="load_project" href="#">Load project <kbd>Ctrl+o</kbd></a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" id="loads_xrd" href="#">Import XRD</a></li>
+                          <li><a class="dropdown-item" id="loads_strain" href="#">Import Strain</a></li>
+                          <li><a class="dropdown-item" id="loads_dw" href="#">Import DW</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" id="export_fits" href="#">Export fits</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" id="save_file" href="#">Save <kbd>Ctrl+s</kbd></a></li>
+                          <li><a class="dropdown-item" id="save_as_file" href="#">Save As</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="menu_options_hide">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuOptions" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Options
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuOptions">
+                          <li><a class="dropdown-item" id="general_options_modal" href="#">Main options</a></li>
+                          <li><a class="dropdown-item" id="graph_colors_modal" href="#">Graph colors</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item d-none" id="menu_about_hide">
+                        <a class="nav-link" id="about_modal" href="#">About</a>
+                    </li>
+                </ul>
+                
+                <form class="d-flex">
+                  <button type="button" class="btn btn-primary" onclick="Apply_update()">Update</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+        
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="sticky-header col-sm-12 p-3">
+                                <div class="card border-0 col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <nav class="ariane_top" aria-label="breadcrumb">
+                                                <ol class="breadcrumb">
+                                                <li class="breadcrumb-item" id="path_name">Home</li>
+                                                <li class="breadcrumb-item active" aria-current="page" id="current_name">New project</li>
+                                                </ol>
+                                            </nav>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <nav class="nav nav-pills nav-fill nav-justified" id="radmax_main_tab" role="tablist">
+                                                <a class="nav-link active" id="parameters_pane-tab" data-bs-toggle="pill" href="#parameters_pane" role="tab" aria-controls="parameters_pane" aria-selected="true">Initial parameters</a>
+                                                <a class="nav-link" id="fitting_pane-tab" data-bs-toggle="pill" href="#fitting_pane" role="tab" aria-controls="fitting_pane" aria-selected="false">Fitting panel</a>
+                                                <a class="nav-link" id="geometry_pane-tab" data-bs-toggle="pill" href="#geometry_pane" role="tab" aria-controls="geometry_pane" aria-selected="false">Sample geometry</a>
+                                                <a class="nav-link d-none" id="database_pane-tab" data-bs-toggle="pill" href="#database_pane" role="tab" aria-controls="database_pane" aria-selected="false">Database</a>
+                                            </nav>
+                                            <Br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                        <div class="col-sm p-3">
+                        <!-- Tabs content -->
+                        <form class="row g-3 initial_params_form" id="initial_params_form" name="initial_params_form" novalidate>
+                        <div class="tab-content decalage_top">
+                            <div class="tab-pane fade show active" id="parameters_pane" role="tabpanel" aria-labelledby="parameters_pane-tab">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card h-100 shadow mb-4" id="click_update_1">
+                                            <div class="card-header py-3">
+                                                <h6 class="m-0 font-weight-bold text-primary">Experiment</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Wavelength (A)</label>
+                                                        <input type="text" class="form-control form-control-user" name="wavelength" id="wavelength" placeholder="Wavelength" required>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label>Background</label>
+                                                        <input type="text" class="form-control form-control-user" name="background" id="background" placeholder="Background" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                                            <label>Resolution function</label>
+                                                            <select class="form-control" data-container="body" id="resolution_func" name="function_profile" required>
+                                                                <option value=0>Gaussian</option>
+                                                                <option value=1>Lorentzian</option>
+                                                                <option value=2>Pseudo-Voigt</option>
+                                                                <option value=3>Generalized Bell</option>
+                                                                <option value=4>Split-PV</option>
+                                                            </select>               
+                                                        </div>
+                                                    </div> 
+                                                </div> 
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0" id="width_left_hide">
+                                                        <label id="width_left_label">Width (°)</label>
+                                                        <input type="text" class="form-control form-control-user" name="width_left" id="width_left" required>
+                                                    </div>
+                                                    <div class="d-none col-sm-6 mb-3 mb-sm-0"id="width_right_hide">
+                                                        <label id="width_right_label">Width right</label>
+                                                        <input type="text" class="form-control form-control-user" name="width_right" id="width_right" required>
+                                                    </div>
+                                                    <div class="col-sm-6" id="shape_left_hide">
+                                                        <label id="shape_left_label">Shape</label>
+                                                        <input type="text" class="form-control form-control-user"  name="shape_left" id="shape_left" required>
+                                                    </div>
+                                                    <div class="d-none col-sm-6" id="shape_right_hide">
+                                                        <label id="shape_right_label">Shape right</label>
+                                                        <input type="text" class="form-control form-control-user"  name="shape_right" id="shape_right" required>
+                                                    </div>
+                                                    <div class="d-none col-sm-6" id="b_bell_hide">
+                                                        <label id="b_bell_label">b</label>
+                                                        <input type="text" class="form-control form-control-user"  name="b_bell" id="b_bell" required>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card h-100 shadow mb-4" id="click_update_2">
+                                            <div class="card-header py-3">
+                                                <h6 class="m-0 font-weight-bold text-primary">Material</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-5 mb-3 mb-sm-0">
+                                                        <label>Material</label>
+                                                        <select class="form-select" id="crystal_choice_m" name="crystal_choice" required>
+                                                        </select>                
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label>h</label>
+                                                        <input type="text" class="form-control form-control-user" name="h" id="h_miller" required>
+                                                    </div>
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label>k</label>
+                                                        <input type="text" id="k_miller" class="form-control" name="k" required>
+                                                    </div>
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label>l</label>
+                                                        <input type="text" id="l_miller" class="form-control" name="l" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3 mb-3 mb-sm-0">
+                                                        <label>2&theta; offset (°)</label>
+                                                        <input type="text" class="form-control form-control-user" name="exp_offset" id="exp_offset" required>(x0.001)
+                                                    </div>
+                                                </div>
+                                                <Br>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <button type="button" class="btn btn-primary" id="DrawExcludeRegion" onclick="open_exclude_region()">Exclude region</button>                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card h-100 shadow mb-4">
+                                            <div class="card-header py-3">
+                                                <h6 class="m-0 font-weight-bold text-primary">Strain and Debye-Waller</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Model</label>
+                                                        <select class="form-select" id="model_strain" name="model_strain" required>
+                                                            <option value=0>B-splines smooth</option>
+                                                            <option value=1>B-splines abrupt</option>
+                                                            <!-- <option value=2>Asymmetric pv</option> -->
+                                                        </select>                
+                                                    </div>
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <Br>
+                                                        <button type="button" class="btn btn-primary" onclick="apply_model_spline()">Apply model</button>              
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Strain</label>              
+                                                    </div>
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Debye-Waller</label>               
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Basis functions</label>
+                                                        <input type="text" class="form-control form-control-user" name="strain_basis_func" id="strain_function" required>
+                                                    </div>
+                                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                                        <label>Basis functions</label>
+                                                        <select  class="form-control" data-minimum-results-for-search="Infinity" data-container="body" id="dw_basis_func" name="dw_function" required>
+                                                        </select>   
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label></label><Br>
+                                                        <button type="button" class="btn btn-primary" onclick="Apply_scale_strain(0)"><i class="far fa-minus-square"></i></button>
+                                                    </div>
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label>Scale</label>
+                                                        <input type="text" class="form-control form-control-user" name="strain_scale" id="strain_scale" required>
+                                                    </div>
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label></label><Br>
+                                                        <button type="button" class="btn btn-primary" onclick="Apply_scale_strain(1)"><i class="far fa-plus-square"></i></button>
+                                                    </div>
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label></label><Br>
+                                                        <button type="button" class="btn btn-primary" onclick="Apply_scale_dw(0)"><i class="far fa-minus-square"></i></button>
+                                                    </div>
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label>Scale</label>
+                                                        <input type="text" class="form-control form-control-user" name="dw_scale" id="dw_scale" required>
+                                                    </div>
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label></label><Br>
+                                                        <button type="button" class="btn btn-primary" onclick="Apply_scale_dw(1)"><i class="far fa-plus-square"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Damaged depth (&Aring;)</label>
+                                                        <input type="text" class="form-control form-control-user" name="damaged_depth" id="damaged_depth" required>
+                                                    </div>
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label>Number of slice</label>
+                                                        <input type="text" class="form-control form-control-user" name="number_slices" id="number_slices" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row d-none" id="pv_parameters">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label id="width_left_label">Eta1</label>
+                                                        <input type="text" class="form-control form-control-user" name="strain_eta_min" id="strain_eta_min" required>
+                                                    </div>
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <label id="width_right_label">Eta2</label>
+                                                        <input type="text" class="form-control form-control-user" name="strain_eta_max" id="strain_eta_max" required>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label id="shape_left_label">Eta1</label>
+                                                        <input type="text" class="form-control form-control-user" name="dw_eta_min" id="dw_eta_min" required>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label id="shape_right_label">Eta2</label>
+                                                        <input type="text" class="form-control form-control-user" name="dw_eta_max" id="dw_eta_max" required>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="fitting_pane" role="tabpanel" aria-labelledby="fitting_pane-tab">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <label>Fitting algorithm</label>
+                                        <select  class="form-control" data-container="body" id="fitting_choice" name="fitting_choice">
+                                            <option value=1>leastsq</option>
+                                            <option value=0>Simulated annealing (GSA)</option>
+                                        </select>                
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label>Fitting options</label>
+                                        <Br>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_fitting_options" id="fitting_options"><i class="fas fa-tools"></i></button>              
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label>Strain and DW values</label>
+                                        <Br>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_strain_dw_values" id="strain_dw_values"><i class="fas fa-tools"></i></button>              
+                                    </div>
+                                    <div class="col-lg-1 d-none" id="fit_state_hide">
+                                        <label>Fit result</label>
+                                        <Br>
+                                        <span style="font-size: 3em; color: Tomato;" id="fit_state_error_hide">
+                                            <i class="fas fa-times"></i>
+                                        </span>
+                                        <span class="d-none" style="font-size: 48px; color: Chartreuse;" id="fit_state_success_hide">
+                                            <i class="fas fa-check"></i>
+                                        </span>      
+                                    </div>
+                                    <div class="col-lg-2 d-none" id="fit_residual_hide">
+                                        <label>Residual Error: </label>
+                                        <Br>
+                                        <span style="font-size: 3em; color: black;" id="fit_error">
+                                        </span>  
+                                    </div>
+                                </div>
+                                <Br>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="card h-100 shadow mb-4">
+                                            <div class="card-header py-3">
+                                                <h6 class="m-0 font-weight-bold text-primary">Fit</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3">
+                                                        <label>Start fit</label><Br>
+                                                        <button type="button" id="start_fit_button" class="btn btn-primary" onclick="start_fit()"><i class="fas fa-play"></i></button>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <label>Stop fit</label><Br>
+                                                        <button type="button" id="stop_fit_button" class="btn btn-danger" onclick="stop_fit()"><i class="fas fa-stop"></i></button>
+                                                    </div>
+                                                    <div class="d-flex d-none" id="spinner_fit_hide">
+                                                        <strong>Please wait...</strong>
+                                                        <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="card h-100 shadow mb-4">
+                                            <div class="card-header py-3">
+                                                <h6 class="m-0 font-weight-bold text-primary">Restore previous</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3">
+                                                        <button type="button" class="btn btn-primary disabled" id="strain_button_restore" onclick="restore_values(1)">Strain values</button>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <button type="button" class="btn btn-primary disabled" id="dw_button_restore" onclick="restore_values(0)">DW values</button>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <button type="button" class="btn btn-primary disabled" id="boh_button_restore" onclick="restore_values(2)">Restore both</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <Br>
+                                <div class="row d-none" id="gsa_options_hide">
+                                    <div class="col-lg-6">
+                                        <div class="card h-100 shadow mb-4">
+                                            <div class="card-header py-3">
+                                                <h6 class="m-0 font-weight-bold text-primary">GSA options</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3">
+                                                        <label>Temperature(K)</label>
+                                                        <input type="text" class="form-control form-control-user" name="tmax" id="tmax" required>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <label>Number of cycle</label>
+                                                        <input type="text" class="form-control form-control-user" name="nb_cycle_max" id="nb_cycle_max" required>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Number of cooling step</label>
+                                                        <input type="text" class="form-control form-control-user" name="nb_palier" id="nb_palier" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="card h-100 shadow mb-4">
+                                            <div class="card-header py-3">
+                                                <h6 class="m-0 font-weight-bold text-primary">GSA fit results</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3">
+                                                        <label>Currents cycle:</label>
+                                                        <span style="font-size: 1.5em; color: black;" id="gsa_current_cycle">
+                                                        </span>  
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="geometry_pane" role="tabpanel" aria-labelledby="geometry_pane-tab">
+                                <div class="card shadow mb-4">
+                                    <div class="card-body">
+                                        <div class="form-group row">
+                                            <div class="col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <h1line class="offset">Geometry</h1line>
+                                                    </div>    
+                                                </div>
+                                                <div class="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
+                                                    <input type="radio" class="btn-check" name="scheme_geometry" id="scheme_geometry_0" onclick="geometryclick(this.value);" autocomplete="off" value=0>
+                                                    <label class="btn btn-outline-primary" for="scheme_geometry_0">Default</label>
+                                                
+                                                    <input type="radio" class="btn-check" name="scheme_geometry" id="scheme_geometry_1" onclick="geometryclick(this.value);" autocomplete="off" value=1>
+                                                    <label class="btn btn-outline-primary" for="scheme_geometry_1">Thin film</label>
+                                                
+                                                    <input type="radio" class="btn-check" name="scheme_geometry" id="scheme_geometry_2" onclick="geometryclick(this.value);" autocomplete="off" value=2>
+                                                    <label class="btn btn-outline-primary" for="scheme_geometry_2">Thick film</label>
+
+                                                    <input type="radio" class="btn-check" name="scheme_geometry" id="scheme_geometry_3" onclick="geometryclick(this.value);" autocomplete="off" value=3>
+                                                    <label class="btn btn-outline-primary" for="scheme_geometry_3">Thick film + substrate</label>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div class="row d-none" id="hide_film_thickness">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <h1line class="offset">Film thickness</h1line>
+                                                        </div>    
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <label>Film thickness</label>
+                                                        <input type="text" class="form-control form-control-user" name="film_thick" id="film_thick" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row d-none" id="hide_film_thickness_substrate">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <h1line class="offset">Substrate</h1line>
+                                                        </div>    
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-5 mb-3 mb-sm-0">
+                                                                <label>Crystal</label>
+                                                                <select class="form-select" id="crystal_choice_s" name="crystal_choice">
+                                                                </select>                
+                                                            </div>
+                                                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                                                <label>h</label>
+                                                                <input type="text" class="form-control form-control-user" name="h_s" id="h_miller_s" required>
+                                                            </div>
+                                                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                                                <label>k</label>
+                                                                <input type="text" class="form-control" name="k_s"  id="k_miller_s" required>
+                                                            </div>
+                                                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                                                <label>l</label>
+                                                                <input type="text" id="l_miller" class="form-control" name="l_s"  id="k_miller_s" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <h1line class="offset">Scheme</h1line>
+                                                </div>    
+                                            </div>
+                                            <div id="labelImageDiv">
+                                                <img id="sheme_img" src="" alt="label scheme"/>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                            <div class="tab-pane fade" id="database_pane" role="tabpanel" aria-labelledby="database_pane-tab">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="DeleteDataSwitch">
+                                            <label class="form-check-label" for="DeleteDataSwitch">Delete from database</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h1line class="offset">Data saved in database</h1line>
+                                    </div>    
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 d-none" id="hide_delete_database_data">
+                                        <br>
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-primary" onclick="delete_database_data()">delete selected data</button>
+                                            <button id="select-all" type="button" class="btn btn-primary">Select All</button>
+                                            <button id="deselect-all" type="button" class="btn btn-primary">Deselect All</button>
+                                        </div><!-- /.col-lg-3 -->
+                                    </div><!-- /row -->
+                                    <div class="col-lg-12">
+                                        <div id="table_database" width="100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <Br>
+                        <hr>
+                        <Br>
+                        <div class="row">
+                            <div class="col-xl-6 col-md-6">
+                                <div class="card h-100 shadow mb-4">
+                                    <div class="card-header">
+                                        <h6 class="text-primary d-flex justify-content-between align-items-center">
+                                            Strain and DW profiles
+                                            <button type="button" class="btn btn-primary" onclick="reset_zoom(1)">Reset - Zoom / ROI</button>
+                                        </h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="DragXPoints">
+                                                    <label class="form-check-label" for="DragXPoints">Drag curves horizontaly</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div id="graph_coords_strain_dw">Coordinates:</div>
+                                            </div>
+                                        </div>
+                                        <Br>
+                                        <div class="row" id="hide_drag_hor">
+                                            <div class="col-lg-2">
+                                                <div class="range-wrap">
+                                                    <label for="drag_hor_strain" class="form-label">Strain</label>
+                                                    <input type="range" class="range" min="-0.1" max="0.1" step="0.01" id="drag_hor_strain">
+                                                    <Br>
+                                                    <output class="bubble" id="bubble_strain"></output>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="vl"></div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="range-wrap">
+                                                    <label for="drag_hor_dw" class="form-label">Debye-Waller</label>
+                                                    <input type="range" class="range" min="-0.3" max="0.3" step="0.1" id="drag_hor_dw">
+                                                    <Br>
+                                                    <output class="bubble" id="bubble_dw"></output>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <Br>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-9 mb-3 mb-sm-0">
+                                                <canvas id="overlay_strain" width="1600" height="900" style="position:absolute;pointer-events:none;"></canvas>
+                                                <canvas id="strain_canvas" width="1600" height="900" oncontextmenu="return false;"></canvas>
+                                            </div>
+                                            <div class="col-sm-9 mb-3 mb-sm-0">
+                                                <canvas id="overlay_dw" width="1600" height="900" style="position:absolute;pointer-events:none;"></canvas>
+                                                <canvas id="dw_canvas" width="1600" height="900" oncontextmenu="return false;"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-md-6">
+                                <div class="card h-100 shadow">
+                                    <div class="card-header">
+                                        <h6 class="text-primary d-flex justify-content-between align-items-center">
+                                            XRD profile
+                                            <button type="button" class="btn btn-primary" onclick="reset_zoom(1)">Reset zoom</button>
+                                          </h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-4 d-none">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="DrawExcludeRegion">
+                                                    <label class="form-check-label" for="DrawExcludeRegion">Add exclude region</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div id="graph_coords_xrd">Coordinates:</div>
+                                            </div>
+                                            <hr>
+                                            <Br>
+                                        </div>
+                                        <div class="row">
+                                            <canvas id="overlay_xrd" width="1600" height="900" style="position:absolute;pointer-events:none;"></canvas>
+                                            <canvas id="xrd_graph" width="1600" height="900" oncontextmenu="return false;"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div>RaDMaX<sup>2</sup> | 2015 - 2022</div>
+                            <div>
+                                <label>Theme:</label>
+                                <select class="form-select" id="theme_bootstrap_choice" name="theme_bootstrap_choice">
+                                    <option value=0>Default</option>
+                                    <option value=1>Dark</option>
+                                    <option value=2>Cyborg</option>
+                                    <option value=3>SandStone</option>
+                                    <option value=4>Sketchy</option>
+                                    <option value=5>Solar</option>
+                                    <option value=6>Minty</option>
+                                    <option value=7>Quartz</option>
+                                </select>   
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+<div class="modal fade" id="modal_fitting_options" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal_name">Fitting options</h4>
+            </div>
+            <div class="modal-body">
+                <form id="fitting_options_form" name="fitting_options_form">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <nav class="nav nav-pills nav-justified" id="radmax-tab" role="tablist">
+                            <a class="nav-link active" id="bspline_pane-tab" data-bs-toggle="pill" href="#bspline_pane" role="tab" aria-controls="bspline_pane" aria-selected="true">Bspline</a>
+                            <a class="nav-link" id="pseudovoigt_pane-tab" data-bs-toggle="pill" href="#pseudovoigt_pane" role="tab" aria-controls="pseudovoigt_pane" aria-selected="false">PseudoVoigt</a>
+                        </nav>
+                    </div>
+                    <Br>
+                    <div class="tab-content">
+                        <legend>Bounds</legend>
+                        <Br>
+                        <Br>
+                        <div class="tab-pane fade show active" id="bspline_pane" role="tabpanel" aria-labelledby="bspline_pane-tab">
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <label class="justify-content-center"><strong>Strain</strong></label>
+                                </div>
+                                <div class="col-sm-1">
+                                    <label></label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class="justify-content-center"><strong>Dwp</strong></label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="strain_min" id="strain_min" required>
+                                </div>
+                                <div class="col-sm-1">
+                                    <label>Min</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="dw_min" id="dw_min" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="strain_max" id="strain_max" required>
+                                </div>
+                                <div class="col-sm-1">
+                                    <label>Max</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="dw_max" id="dw_max" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pseudovoigt_pane" role="tabpanel" aria-labelledby="pseudovoigt_pane-tab">
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <label class="justify-content-center"><strong>Strain</strong></label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label></label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class="justify-content-center"><strong>Dwp</strong></label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="strain_eta_min" id="strain_eta_min_modal" required>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Eta min</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="dw_eta_min" id="dw_eta_min_modal" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <Br>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="strain_eta_max" id="strain_eta_max_modal" required>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Eta max</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="dw_eta_max" id="dw_eta_max_modal" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="strain_height_min" id="strain_height_min" required>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>height min</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="dw_height_min" id="dw_height_min" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="strain_height_max" id="strain_height_max" required>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>height max</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="dw_height_max" id="dw_height_max" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="strain_bkg_min" id="strain_bkg_min" required>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>bkg min</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="dw_bkg_min" id="dw_bkg_min" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="strain_bkg_max" id="strain_bkg_max" required>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>bkg max</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="dw_bkg_max" id="dw_bkg_max" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <Br>
+                <hr>
+                <div class="row">
+                    <fieldsetbox>
+                        <legend>Leastsq parameters</legend>
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <label>xtol</label>
+                                <input type="text" class="form-control form-control-user" name="xtol" id="xtol" required>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>ftol</label>
+                                <input type="text" class="form-control form-control-user" name="ftol" id="ftol" required>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>maxfev</label>
+                                <input type="text" class="form-control form-control-user" name="maxfev" id="maxfev" required>
+                            </div>
+                        </div>
+                      </fieldsetbox>
+                </div>
+                <Br>
+                <Br>
+                <div class="row">
+                    <fieldsetbox>
+                        <legend>Advanced GSA options(expert users only)</legend>
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <label>qa</label>
+                                <input type="text" class="form-control form-control-user" name="qa" id="qa" required>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>qv</label>
+                                <input type="text" class="form-control form-control-user" name="qv" id="qv" required>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>qt</label>
+                                <input type="text" class="form-control form-control-user" name="qt" id="qt" required>
+                            </div>
+                        </div>
+                      </fieldsetbox>
+                </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" onclick="fitting_options_default()">Set as default</button>
+                <button type="button" class="btn btn-primary" onclick="fitting_options_changes()">Apply changes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_strain_dw_values" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal_name">Strain and DW values</h4>
+            </div>
+            <div class="modal-body">
+                <div id="table_strain_dw_values"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_change_limits" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal_name">Fit parameters</h4>
+            </div>
+            <div class="modal-body">
+                <legend>Input parameters are off limits</legend>
+                <Br>
+                <label>Please, choose the following action</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="change_input_limit" id="change_input_limit1" value=0 checked>
+                    <label class="form-check-label" for="change_input_limit1">
+                        Modify input
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="change_input_limit" id="change_input_limit2" value=1>
+                    <label class="form-check-label" for="change_input_limit2">
+                        Modify limits
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="change_input_limit" id="change_input_limit3" value=2>
+                    <label class="form-check-label" for="change_input_limit3">
+                        Close and let me think
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="change_limits()" data-bs-dismiss="modal">Proceed</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="modal fade" id="modal_options" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Options</h4>
+            </div>
+            <div class="modal-body">
+                <legend>Choose the way RaDMaX works</legend>
+                <Br>
+                <Br>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="radmax_use_database" oninput="OptionsValueChange()">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Use database to store results</label>
+                </div>
+                <Br>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="sounds_open" oninput="OptionsValueChange()">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Open with sounds</label>
+                </div>
+                <Br>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="sounds_play" oninput="OptionsValueChange()">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Play sounds when fit is done</label>
+                </div>
+                <Br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="modal fade" id="modal_about" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">About</h4>
+            </div>
+            <div class="modal-body">
+                <legend><img src="/img/icone_radmax_2.png" width="35" height="35" alt="Radmax"> RaDMaX<sup>2</sup>: "Radiation Damage in Materials analyzed with X-ray diffraction"</legend>
+                <Br>
+                <label>Developed by:</label>
+                <label>A. Boulle - M. Souilah</label>
+                <Br>
+                <Br>
+                <label id="radmax_version">Version:</label>
+                <Br>
+                <Br>
+                <label>RaDMaX<sup>2</sup> is the second version of <a href="http://aboulle.github.io/RaDMaX/" target='_blank'>RaDMaX</a>, first published in 2015.</label>
+                <label>It comes with a brand new interface, and some new features to improve the fitting of the data.</label>
+                <Br>
+                <Br>
+                <label>RaDMaX<sup>2</sup> is distributed freely under the CeCILL license (see LICENSE.txt and COPYRIGHT.txt)</label>
+                <Br>
+                <Br>
+                <label>IRCER | 2015 - 2022</label>
+                <Br>
+                <Br>
+                <label><a href="https://github.com/MSouilah/RaDMaX_2" target='_blank'>https://github.com/MSouilah/RaDMaX_2/</a></label>
+                <Br>
+                <Br>
+                <label><u>Modules used with RaDMaX</u><sup>2</sup>:</label>
+                <Br>
+                <Br>
+                <label>
+                    <a target="_blank" href='https://getbootstrap.com//'>Bootstrap v5</a>, Bootstrap, the world’s most popular front-end open source toolkit
+                </label>
+                <Br>
+                <label>Copyright 2011-2021 Bootstrap Authors and Twitter, Inc, MIT</label>
+                <Br>
+                <Br>
+                <label>
+                    <a target="_blank" href='https://www.chartjs.org/'>Chart.js</a>, Simple yet flexible JavaScript charting for designers & developers
+                </label>
+                <Br>
+                <label>Copyright 2014-2021 Chart.js Contributors, MIT</label>
+                <Br>
+                <Br>
+                <label>
+                    <a target="_blank" href='http://tabulator.info'>Tabulator</a>, The easy to use, fully featured, interactive table JavaScript library
+                </label>
+                <Br>
+                <label>Copyright (c) 2015-2021 Oli Folkerd, MIT</label>
+                <Br>
+                <Br>
+                <label>
+                    <a target="_blank" href='https://moment.github.io/luxon/#/'>Luxon</a>, A powerful, modern, and friendly wrapper for JavaScript dates and times
+                </label>
+                <Br>
+                <Br>
+                <label>
+                    <a target="_blank" href='https://craig.is/killing/mice'>Mousetrap</a>, A simple library for handling keyboard shortcuts in Javascript
+            </label>
+            <Br>
+            <label>Copyright 2012-2017 Craig Campbell, Apache License 2.0</label>
+            <Br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_check_input_file" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Pay attention to your input file</h4>
+            </div>
+            <div class="modal-body">
+                <legend>Please, check your input file:</legend>
+                <Br>
+                <label>- Wrong number of columns</label>
+                <Br>
+                <label>- File contains header information, remove these informations</label>
+                <Br>
+                <label>- File does not exist when reading the .ini file</label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_options" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Main options</h4>
+            </div>
+            <div class="modal-body">
+                <legend>Choose the way RaDMaX works</legend>
+                <Br>
+                <Br>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="radmax_use_database" oninput="OptionsValueChange()">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Use database to store results</label>
+                </div>
+                <Br>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="sounds_open" oninput="OptionsValueChange()">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Open with sounds</label>
+                </div>
+                <Br>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="sounds_play" oninput="OptionsValueChange()">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Play sounds when fit is done</label>
+                </div>
+                <Br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_colors" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Graph colors picker</h4>
+            </div>
+            <div class="modal-body">
+                <legend>Choose the graph colors</legend>
+                <Br>
+                <Br>
+                <div>
+                    <input type="color" id="color_strain_modal" name="color_strain_modal">
+                    <label for="head">Strain</label>
+                </div>
+                <div>
+                    <input type="color" id="color_dw_modal" name="color_dw_modal">
+                    <label for="body">DW</label>
+                </div>
+                <div>
+                    <input type="color" id="color_xrd_data_modal" name="color_xrd_data_modal">
+                    <label for="body">XRD Data</label>
+                </div>
+                <div>
+                    <input type="color" id="color_xrd_fit_modal" name="color_xrd_fit_modal">
+                    <label for="body">XRD Fit</label>
+                </div>
+                <div>
+                    <input type="color" id="color_xrd_live_modal" name="color_xrd_live_modal">
+                    <label for="body">XRD Live</label>
+                </div>
+                <Br>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-secondary" onclick="apply_change_graph_colors(0)">Apply</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="apply_change_graph_colors(1)">Set default values</button>
+                    </div>
+                </div>
+                    
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_open_exclude_region" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Manage XRD exclude region</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <button type="button" class="btn btn-primary" onclick="add_region()">Add region</button>
+                    </div>
+                </div>
+                <br>
+                <form class="row g-3 exclude_region_form" id="exclude_region_form" name="exclude_region_form" novalidate>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                                <label>Start region</label>
+                                <input type="text" id="start_exclude_region" class="form-control" name="start_exclude_region" placeholder="start coordinate" onkeypress="validate(event)" required>
+                        </div><!-- /.col-lg-3 -->
+                    </div><!-- /row -->
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                                <label>End region</label>
+                                <input type="text" id="end_exclude_region" class="form-control" name="end_exclude_region" placeholder="end coordinate" onkeypress="validate(event)" required>
+                        </div><!-- /.col-lg-3 -->
+                        <br>
+                    </div><!-- /row -->
+                </form>
+                    <hr>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary" id="modal_delete_region" onclick="delete_region()">Delete Region</button>
+                        </div><!-- /.col-lg-3 -->
+                    </div><!-- /row -->
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <div id="table_exclude_region"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_change_basis_function" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Pay attention to your basis functions</h4>
+            </div>
+            <div class="modal-body">
+                <legend>Please, change the value of the Strain basis functions</legend>
+                <Br>
+                <label>- The actual value number does not fit the damaged depth and the number of slice</label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="modules/graph.js"></script>
+<script src="modules/functions.js"></script>
+<script src="./renderer.js"></script>
+<script src="modules/index.js"></script>
+<script src="modules/exchange.js"></script>
+    </body>
+</html>

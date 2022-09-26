@@ -1,0 +1,20 @@
+{
+  "name": "RaDMaX",
+  "version": "2022.08",
+  "description": "Radiation Damage in Materials analyzed with X-ray diffraction",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "Electron",
+    "Python",
+    "XRD"
+  ],
+  "author": "GitHub",
+  "license": "CeCILL",
+  "devDependencies": {
+    "electron": "^10.4.0",
+    "typescript": "^4.2.3"
+  }
+}
