@@ -36,8 +36,7 @@ Run (as root), for python 3.8 as exemple : `port install py38-numpy py38-scipy p
 
 ## Development environment
 The RaDMaX<sup>2</sup> program has been developed on MS Windows 10 using python 3.8.10, Scipy 1.5.2, Numpy:1.20.3 and Lmfit 1.0.2.
-It has been tested on several GNU/Linux distributions including Debian 8 and Kubuntu 15.04, using python 2.7.9, Matplotlib 1.4.2 and WxPython 3.0.1.1.
-It also has been tested on a MacMini running OSX Yosemite 10.10.5 with python 2.7.11, Matplotlib 1.5.1 and WxPython 3.0.2.0.
+It has been tested on several GNU/Linux distributions including Debian 8 and Kubuntu 15.04.
 
 # Quick test of the program
 1. Launch Radmax.py.
