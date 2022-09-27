@@ -120,7 +120,9 @@ def stop_worker():
 def update_change_limits(data):
     if data != "None":
         g.on_modify_deformation_limits(data)
-        g.on_launch_thread(live_data_from_fit)
+        test = g.on_launch_thread(live_data_from_fit)
+        if test == 0:
+            eel.fit_goes_wrong()
 
 @eel.expose                         # Expose this function to Javascript
 def read_db_data(id):
@@ -158,6 +160,7 @@ def drag_horizontaly(value, graph):
 def update_project(data):
     # print('##################################################')
     # print('Update')
+    # print(data)
     # print('##################################################')
     if a.PathDict['xrd_data'] != '':
         res = b.on_update(data)
@@ -169,6 +172,7 @@ def update_project(data):
 
 def update_data_format():
     tmp = ["update", a.crystal_list, a.DefaultDict, a.AllDataDict, a.ChangeBasisFunction, a.bounds_parameters]
+    # print(tmp)
     eel.data_from_py(tmp)
     tmp = ["update_xrd", a.ParamDict['th4live'].tolist(), a.ParamDict['I_i'].tolist(), p4R.xrd2graph, p4R.limit_graph]
     eel.data_graph_py(tmp)
@@ -486,7 +490,6 @@ class Main():
             sys.exit()
 
     def read_init_file(self):
-        start = time.time()
         P4Rm.lmfit_install = True
         test_ini = f.on_read_init_parameters(
             os.path.join(
@@ -497,55 +500,59 @@ class Main():
         )
         if test_ini:
             h.on_update_example(p4R.application_path)
-        config_File_extraction = f.read_result_value()
-
-        for k, v in a.DefaultDict.items():
-            P4Rm.DefaultDict[k] = config_File_extraction[k]
-        for k, v in p4R.FitParamDefault.items():
-            if k == 'maxfev' or k == 'theme':
-                P4Rm.DefaultDict[k] = int(float(a.DefaultDict[k]))
-            elif k in p4R.s_radmax_7:
-                P4Rm.DefaultDict[k] = a.DefaultDict[k]
-            elif k in p4R.s_radmax_8 or k in p4R.s_radmax_9:
-                if a.DefaultDict[k] == 'True':
-                    P4Rm.DefaultDict[k] = True
+            eel.sleep(0.5)
+            self.read_init_file()
+        else:
+            config_File_extraction = f.read_result_value()
+            for k, v in a.DefaultDict.items():
+                P4Rm.DefaultDict[k] = config_File_extraction[k]
+            for k, v in p4R.FitParamDefault.items():
+                if k == 'maxfev' or k == 'theme':
+                    P4Rm.DefaultDict[k] = int(float(a.DefaultDict[k]))
+                elif k in p4R.s_radmax_7:
+                    P4Rm.DefaultDict[k] = a.DefaultDict[k]
+                elif k in p4R.s_radmax_8 or k in p4R.s_radmax_9:
+                    if a.DefaultDict[k] == 'True':
+                        P4Rm.DefaultDict[k] = True
+                    else:
+                        P4Rm.DefaultDict[k] = False
+                elif k == 'version':
+                    P4Rm.DefaultDict[k] = p4R.version
+                elif k == 'last_modification':
+                    P4Rm.DefaultDict[k] = p4R.last_modification
                 else:
-                    P4Rm.DefaultDict[k] = False
-            elif k == 'version':
-                P4Rm.DefaultDict[k] = p4R.version
-            elif k == 'last_modification':
-                P4Rm.DefaultDict[k] = p4R.last_modification
-            else:
-                P4Rm.DefaultDict[k] = float(a.DefaultDict[k])
-        tmp = ["browser_choice", self.browser_choice]
-        eel.browser(tmp)
+                    P4Rm.DefaultDict[k] = float(a.DefaultDict[k])
+            tmp = ["browser_choice", self.browser_choice]
+            eel.browser(tmp)
 
-        manage_css_theme_files(a.DefaultDict['theme'], 0)
-        eel.manage_database_using(a.DefaultDict['use_database'])
+            manage_css_theme_files(a.DefaultDict['theme'], 0)
+            eel.manage_database_using(a.DefaultDict['use_database'])
 
-        P4Rm.PathDict['path_to_database'] = config_File_extraction['path_to_database']
+            P4Rm.PathDict['path_to_database'] = config_File_extraction['path_to_database']
 
-        if os.listdir(p4R.structures_name):
-            tmp = [os.path.splitext(filename)[0] for filename in os.listdir(p4R.structures_name)]
-            P4Rm.crystal_list = sorted(tmp)
-        if P4Rm.DefaultDict['open_with_sound']:
-            load_random_voice = randint(0, 3)
-            Sound_Launcher(2, load_random_voice)
-        b.on_init_dictionnaries()
-        b.on_new_project()
-        b.on_read_bounds()
-        c.initialize_database()
-        c.on_read_part_DB()
-        end = time.time()
-        # print('before_eel ', end - start)
-        # eel.browser(self.browser_choice)
-        tmp = ["initialization", a.crystal_list, a.DefaultDict, a.NewProjectDict, a.ChangeBasisFunction, a.bounds_parameters]
-        eel.data_from_py(tmp)
-        tmp = ["load_strain_from_main", a.ParamDict['strain_scat'], a.ParamDict['strain_line'], p4R.limit_graph]
-        eel.data_graph_py(tmp)
-        tmp = ["load_dw_from_main", a.ParamDict['dw_scat'], a.ParamDict['dw_line'], p4R.limit_graph]
-        eel.data_graph_py(tmp)
-        tmp = ["Loading_database", a.database_list, a.DBDict]
-        eel.dataPyDB(tmp)
-        end = time.time()
-        # print('end ', end - start)
+            if os.listdir(p4R.structures_name):
+                tmp = [os.path.splitext(filename)[0] for filename in os.listdir(p4R.structures_name)]
+                P4Rm.crystal_list = sorted(tmp)
+            if P4Rm.DefaultDict['open_with_sound']:
+                load_random_voice = randint(0, 3)
+                Sound_Launcher(2, load_random_voice)
+            b.on_init_dictionnaries()
+            b.on_new_project()
+            b.on_read_bounds()
+            res_from_db = c.initialize_database()
+            c.on_read_part_DB()
+
+            # print('before_eel ', end - start)
+            # eel.browser(self.browser_choice)
+            tmp = ["initialization", a.crystal_list, a.DefaultDict, a.NewProjectDict, a.ChangeBasisFunction, a.bounds_parameters]
+            eel.data_from_py(tmp)
+            tmp = ["load_strain_from_main", a.ParamDict['strain_scat'], a.ParamDict['strain_line'], p4R.limit_graph]
+            eel.data_graph_py(tmp)
+            tmp = ["load_dw_from_main", a.ParamDict['dw_scat'], a.ParamDict['dw_line'], p4R.limit_graph]
+            eel.data_graph_py(tmp)
+            tmp = ["Loading_database", a.database_list, a.DBDict]
+            eel.dataPyDB(tmp)
+
+            # if not res_from_db:
+            #     change_path_db_choice()
+

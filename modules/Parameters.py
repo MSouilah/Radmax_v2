@@ -21,6 +21,7 @@ log_filename = "activity"
 ExperimentFile = 'ExperimentFile'
 RadmaxFile = 'RadmaxFile'
 Database_name = 'RadmaxDB'
+Database_sql = 'RadMaxData.sql'
 
 description = "RaDMaX: Radiation Damage in Materials analyzed with X-ray diffraction"
 licence = "RaDMaX is distributed freely under the CeCILL license (see LICENSE.txt and COPYRIGHT.txt)."
@@ -188,7 +189,7 @@ output_name = {
 example_list = [
     "YSZ",
     "SiC_3C",
-    "SiC_pv"
+    # "SiC_pv"
 ]
 
 # Radmax.py path

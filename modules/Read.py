@@ -609,9 +609,8 @@ class SaveFile():
                     logging.INFO,
                     msg
                 )
-                print(a.PathDict)
-                print(a.DefaultDict)
-                return os.path.splitext(os.path.basename(path))[0]
+
+                return os.path.splitext(os.path.basename(a.PathDict['path2ini']))[0]
             else:
                 return False
 

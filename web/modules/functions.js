@@ -185,6 +185,7 @@ const width_left_hide = document.getElementById('width_left_hide'),
     modal_load_xrd_before_save_project = new bootstrap.Modal(document.getElementById('modal_load_xrd_before_save_project')),
     modal_directory_no_longer_exist = new bootstrap.Modal(document.getElementById('modal_directory_no_longer_exist')),
     modal_error_delete_data_from_db = new bootstrap.Modal(document.getElementById('modal_error_delete_data_from_db')),
+    modal_fit_ending_wrong = new bootstrap.Modal(document.getElementById('modal_fit_ending_wrong')),
     modal_about = new bootstrap.Modal(document.getElementById('modal_about')),
     modal_options = new bootstrap.Modal(document.getElementById('modal_options')),
     modal_colors = new bootstrap.Modal(document.getElementById('modal_colors')),
@@ -537,7 +538,7 @@ function validate(evt) {
     var theEvent = evt || window.event;
     // Handle paste
     if (theEvent.type === 'paste') {
-        key = event.clipboardData.getData('text/plain');
+        key = evt.clipboardData.getData('text/plain');
     } else {
     // Handle key press
         var key = theEvent.keyCode || theEvent.which;

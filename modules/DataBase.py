@@ -57,19 +57,24 @@ class DataBaseUse():
         """
         self.con = None
 
-    def create_connection(self, path):
+    def create_connection(self, path, db_exist):
         """ create a database connection to a SQLite database """
         con = None
         try:
             con = sqlite3.connect(path, check_same_thread=False)
+            cur = con.cursor()
+            if not db_exist:
+                path2sql = os.path.join(p4R.database_path, p4R.Database_sql)
+                with open(path2sql) as fp:
+                    cur.executescript(fp.read())
             con.row_factory = sqlite3.Row
             print("Database successfully connected.")
             return con
         except sqlite3.Error as e:
             print("Error while connecting to sqlite", e)
 
-    def connect_db(self, path):
-        con = self.create_connection(path)
+    def connect_db(self, path, db_exist):
+        con = self.create_connection(path, db_exist)
         P4Rm.DBDict['con'] = con
         P4Rm.DBDict['cursor'] = con.cursor()
 
@@ -78,20 +83,33 @@ class DataBaseUse():
         Create an engine that stores data in the local directory's
         sqlalchemy_example.db file.
         """
-        a = P4Rm()
         logger.log(logging.WARNING, 'Loading or creates database')
 
         cursor = None
-        if not os.path.isdir(p4R.database_path):
+        if a.DefaultDict['change_path_database']:
+            pathdb = a.DefaultDict['path_to_database']
+        else:
+            pathdb = os.path.join(p4R.database_path)
+
+        if not os.path.isdir(pathdb):
             msg = p4R.database_path + " is not present, creates one !"
             logger.log(logging.WARNING, msg)
-            os.makedirs(p4R.database_path)
-        path = os.path.join(p4R.database_path, p4R.Database_name + '.db')
+            if not a.DefaultDict['change_path_database']:
+                os.makedirs(p4R.database_path)
+                pathdb = os.path.join(p4R.database_path)
+                path = os.path.join(pathdb, p4R.Database_name + '.db')
+            else:
+                return "change_dir_db_choice"
+        else:
+            path = os.path.join(pathdb, p4R.Database_name + '.db')
+
+        db_exist = 1
         if not os.path.isfile(path):
+            db_exist = 0
             msg = p4R.Database_name + " is not present, creates one !"
             logger.log(logging.WARNING, msg)
 
-        self.connect_db(path)
+        self.connect_db(path, db_exist)
         # !!! changer la suite !!!
 
         file_stats = os.stat(path)
@@ -128,6 +146,7 @@ class DataBaseUse():
         if res:
             if len(res) > 0:
                 self.on_read_database_and_fill_list(res)
+        return True
 
     @staticmethod
     def on_read_database_and_fill_list(data):
@@ -149,7 +168,6 @@ class DataBaseUse():
         P4Rm.database_list = list_temp
 
     def on_fill_database_and_list(self, success):
-        a = P4Rm()
         current_time = localtime()
         date = strftime('%Y-%m-%d %H:%M:%S', current_time)
 

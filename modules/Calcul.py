@@ -601,7 +601,7 @@ class Calcul4Radmax():
                         P4Rm.AllDataDict['strain_basis_func'] = a.ParamDict['strain_sm_ab_bkp']
                         P4Rm.AllDataDict['dw_basis_func'] = a.ParamDict['dw_sm_ab_bkp']
                     P4Rm.ParamDict['state_sp'] = len(a.ParamDict['sp'])*[True]
-                    # P4Rm.ParamDict['state_dwp'] = len(a.ParamDict['dwp'])*[True]
+                    P4Rm.ParamDict['state_dwp'] = len(a.ParamDict['dwp'])*[True]
 
             return a.AllDataDict['number_slices'], a.res_nearest_dw[0]
         else:
@@ -656,7 +656,14 @@ class Calcul4Radmax():
 
     def on_update(self, data=None):
         res_data = data[0]
-        # print(res_data)
+
+        # read_ strain_choice and dw_choice state o check if point is used in he fit or not
+        loops = 0
+        for values in data[1]:
+            a.ParamDict['state_sp'][loops] = values['strain_choice']
+            a.ParamDict['state_dwp'][loops] = values['dw_choice']
+            loops += 1
+
         basis_func_state = 1
         if (int(res_data['strain_basis_func']) == a.AllDataDict['strain_basis_func'] and
             int(res_data['dw_basis_func']) == a.AllDataDict['dw_basis_func'] and 
@@ -904,7 +911,7 @@ class Calcul4Radmax():
                 a.ParamDict['DW_multiplication']
             )
         self.on_read_bounds()
-        to_update = [data[3], a.bounds_parameters]
+        to_update = [data[3], a.bounds_parameters, data[4]]
         self.on_update(to_update)
 
     def read_sp_dwp_from_table(self, data):

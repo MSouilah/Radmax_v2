@@ -107,16 +107,17 @@ class UpdateExampleFiles():
     def on_update_example(self, data):
         example_path = os.path.join(data, "examples")
         for d in p4R.example_list:
-            filename = d + '.ini'
+            filename = 'config.ini'
             example_dir = os.path.join(example_path, d, filename)
             replaced_content = ""
             with open(example_dir, 'r', encoding='utf-8') as fp:
                 while True:
                     line = fp.readline()
                     if "<WRITE PATH HERE>" in line:
+                        xrd_path = os.path.join(example_path, d, d + '_XRD.txt')
                         if _platform == 'win32':
                             newline = line.replace("/", "\\")
-                        newline = newline.replace("<WRITE PATH HERE>", data)
+                        newline = newline.replace("<WRITE PATH HERE>", xrd_path)
                         replaced_content += newline
                     else:
                         replaced_content += line

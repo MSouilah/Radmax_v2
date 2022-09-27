@@ -51,7 +51,6 @@ function start_fit(){
     fit_residual_hide.classList.add('d-none');
     nb_cycle_max_save = nb_cycle_max.value;
     Apply_update();
-    // eel.launch_worker();
     launch_worker();
 }
 
@@ -91,20 +90,39 @@ function Apply_scale(val, type){
     .forEach(function (form) {
         if (!form.checkValidity()) {
         }else{
-            // tmp = [type, val, dw_scale.value, val2save];
-            // eel.scale_manual(tmp);
-            scale_manual(type, val);
+            scale_manual(type, val, exclude_region_data);
         }
     })
 }
 
 function restore_values(val){
+    console.log("save_bounds_values_4_restore", save_bounds_values_4_restore)
+    var current_bounds_values = table_strain_dw_values.getData();
+    if(val == 0){
+        Object.entries(save_bounds_values_4_restore).forEach(([key, val]) => {
+            console.log(key, val)
+            current_bounds_values[key]['dw'] = val.dw;
+        })
+        var tmp = ["DW", current_bounds_values, true]
+    }else{
+        Object.entries(save_bounds_values_4_restore).forEach(([key, val]) => {
+            console.log(key, val)
+            current_bounds_values[key]['strain'] = val.strain;
+        })
+        var tmp = ["Strain", current_bounds_values, true]
+    }
+    console.log("current_bounds_values", current_bounds_values)
+    table_strain_dw_values.clearData();
+    table_strain_dw_values.updateOrAddData([current_bounds_values]);
+    update_sp_dwp_table(tmp);
+}
+
+function restore_values_both(){
     table_strain_dw_values.clearData();
     table_strain_dw_values.updateOrAddData([save_bounds_values_4_restore]);
-    var tmp = ["DW", table_strain_dw_values.getData()]
+    var tmp = ["DW", table_strain_dw_values.getData(), true]
     update_sp_dwp_table(tmp)
-    // eel.update_sp_dwp_table(tmp)
-    var tmp = ["Strain", table_strain_dw_values.getData()]
+    var tmp = ["Strain", table_strain_dw_values.getData(), true]
     update_sp_dwp_table(tmp)
 }
 
@@ -592,6 +610,16 @@ function fit_ending_data(dat){
         dw_button_restore.classList.remove('disabled');
         boh_button_restore.classList.remove('disabled');
     }
+}
+
+function fit_ending_wrong(){
+    parameters_pane_tab.classList.remove('disabled');
+    geometry_pane_tab.classList.remove('disabled');
+    database_pane_tab.classList.remove('disabled');
+    start_fit_button.classList.remove('disabled');
+    spinner_fit_hide.classList.add('d-none');
+    fit_state_hide.classList.remove('d-none');
+    fit_residual_hide.classList.remove('d-none');
 }
 
 radmax_tab.addEventListener('click', function () {

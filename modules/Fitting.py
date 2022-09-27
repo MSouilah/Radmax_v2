@@ -121,7 +121,6 @@ class Fitting4Radmax():
     def on_test_data_before_fit(self):
         P4Rm.ParamDict['sp'] = np.asarray(a.ParamDict['sp'])
         P4Rm.ParamDict['dwp'] = np.asarray(a.ParamDict['dwp'])
-
         if a.AllDataDict['model'] == 0. or a.AllDataDict['model'] == 1.:
             test_dw = all(a.ParamDict['dwp'] > a.AllDataDict['dw_min']) and all(a.ParamDict['dwp'] < a.AllDataDict['dw_max'])
             test_strain = all(a.ParamDict['sp'] > a.AllDataDict['strain_min']) and all(a.ParamDict['sp'] < a.AllDataDict['strain_max'])
@@ -179,17 +178,17 @@ class Fitting4Radmax():
                     a.ParamDict['dwp'],
                     a.ParamDict['sp']
                 ):
-                    if val_dwp < a.AllDataDict['dw_min']:
+                    if float(val_dwp) <= float(a.AllDataDict['dw_min']):
                         val_ = a.AllDataDict['dw_min'] + value
                         P4Rm.ParamDict['dwp'][i] = val_
-                    elif val_dwp > a.AllDataDict['dw_max']:
+                    elif float(val_dwp) >= float(a.AllDataDict['dw_max']):
                         val_ = a.AllDataDict['dw_max'] - value
                         P4Rm.ParamDict['dwp'][i] = val_
 
-                    if val_sp < a.AllDataDict['strain_min']:
+                    if val_sp <= a.AllDataDict['strain_min']:
                         val_ = a.AllDataDict['strain_min'] + value
                         P4Rm.ParamDict['sp'][i] = val_
-                    elif val_sp > a.AllDataDict['strain_max']:
+                    elif val_sp >= a.AllDataDict['strain_max']:
                         val_ = a.AllDataDict['strain_max'] - value
                         P4Rm.ParamDict['sp'][i] = val_
                     i += 1
@@ -206,13 +205,13 @@ class Fitting4Radmax():
                     a.ParamDict['dwp'],
                     a.ParamDict['sp']
                 ):
-                    if val_dwp < a.AllDataDict['dw_min']:
+                    if val_dwp <= a.AllDataDict['dw_min']:
                         t_min_dw[i] = True
-                    elif val_dwp > a.AllDataDict['dw_max']:
+                    elif val_dwp >= a.AllDataDict['dw_max']:
                         t_max_dw[i] = True
-                    if val_sp < a.AllDataDict['strain_min']:
+                    if val_sp <= a.AllDataDict['strain_min']:
                         t_min_sp[i] = True
-                    elif val_sp > a.AllDataDict['strain_max']:
+                    elif val_sp >= a.AllDataDict['strain_max']:
                         t_max_sp[i] = True
                     i += 1
                 if True in t_min_dw:
@@ -245,34 +244,34 @@ class Fitting4Radmax():
                     if i in ls_:
                         v_ = ls_.index(i)
                         ve_ = lse_[v_]
-                        if val_sp < a.AllDataDict[p4R.GSAp_[ve_]]:
+                        if val_sp <= a.AllDataDict[p4R.GSAp_[ve_]]:
                             val_ = a.AllDataDict[p4R.GSAp_[ve_]] + value
                             P4Rm.ParamDict['sp'][i] = val_
-                        elif val_sp > a.AllDataDict[p4R.GSAp_[ve_ + 1]]:
+                        elif val_sp >= a.AllDataDict[p4R.GSAp_[ve_ + 1]]:
                             val_ = a.AllDataDict[p4R.GSAp_[ve_ + 1]] - value
                             P4Rm.ParamDict['sp'][i] = val_
                     else:
-                        if val_sp < 0.:
+                        if val_sp <= 0.:
                             val_ = value
                             P4Rm.ParamDict['sp'][i] = val_
-                        elif val_sp > 1.:
+                        elif val_sp >= 1.:
                             val_ = 1. - value
                             P4Rm.ParamDict['sp'][i] = val_
                     j = i + 6
                     if j in ld_:
                         v_ = ld_.index(j)
                         ve_ = lde_[v_]
-                        if val_dwp < a.AllDataDict[p4R.GSAp_[ve_]]:
+                        if val_dwp <= a.AllDataDict[p4R.GSAp_[ve_]]:
                             val_ = a.AllDataDict[p4R.GSAp_[ve_]] + value
                             P4Rm.ParamDict['dwp'][i] = val_
-                        elif val_dwp > a.AllDataDict[p4R.GSAp_[ve_ + 1]]:
+                        elif val_dwp >= a.AllDataDict[p4R.GSAp_[ve_ + 1]]:
                             val_ = a.AllDataDict[p4R.GSAp_[ve_ + 1]] - value
                             P4Rm.ParamDict['dwp'][i] = val_
                     else:
-                        if val_dwp < 0.:
+                        if val_dwp <= 0.:
                             val_ = value
                             P4Rm.ParamDict['dwp'][i] = val_
-                        elif val_dwp > 1.:
+                        elif val_dwp >= 1.:
                             val_ = 1. - value
                             P4Rm.ParamDict['dwp'][i] = val_
                     i += 1
@@ -318,18 +317,18 @@ class Fitting4Radmax():
                     if i in ls_:
                         v_ = ls_.index(i)
                         ve_ = lse_[v_]
-                        if val_sp < a.AllDataDict[p4R.GSAp_[ve_]]:
+                        if val_sp <= a.AllDataDict[p4R.GSAp_[ve_]]:
                             test_strain_min[k] = True
-                        elif val_sp > a.AllDataDict[p4R.GSAp_[ve_ + 1]]:
+                        elif val_sp >= a.AllDataDict[p4R.GSAp_[ve_ + 1]]:
                             test_strain_max[k] = True
                         k += 1
                     j = i + 6
                     if j in ld_:
                         v_ = ld_.index(j)
                         ve_ = lde_[v_]
-                        if val_dwp < a.AllDataDict[p4R.GSAp_[ve_]]:
+                        if val_dwp <= a.AllDataDict[p4R.GSAp_[ve_]]:
                             test_dw_min[l] = True
-                        elif val_dwp > a.AllDataDict[p4R.GSAp_[ve_ + 1]]:
+                        elif val_dwp >= a.AllDataDict[p4R.GSAp_[ve_ + 1]]:
                             test_dw_max[l] = True
                         l += 1
                     i += 1
@@ -767,7 +766,6 @@ class Fit_launcher(Thread):
             else:
                 func = self.residual_leastsq
             if self.choice == 1:
-                print("a.ParamDict['par']", a.ParamDict['par'])
                 P4Rm.par_fit, P4Rm.success = leastsq(
                     func,
                     a.ParamDict['par'],

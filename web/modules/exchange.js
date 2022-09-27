@@ -36,7 +36,7 @@ function stop_worker(){
 }
 
 function scale_manual(type, val){
-    tmp = [type, val, dw_scale.value, val2save];
+    tmp = [type, val, dw_scale.value, val2save, exclude_region_data];
     eel.scale_manual(tmp)
 }
 
@@ -166,7 +166,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     eel.expose(update_bounds_table)
     function update_bounds_table(data){
-        load_strain_dw_values(data[1])
+        load_strain_dw_values(data[1]);
     }
 
     eel.expose(change_limit_input)
@@ -176,7 +176,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     eel.expose(result_from_fit)
     function result_from_fit(dat){
-        fit_ending_data(dat)
+        fit_ending_data(dat);
+    }
+
+    eel.expose(fit_goes_wrong)
+    function fit_goes_wrong(dat){
+        fit_ending_wrong();
+        modal_fit_ending_wrong.toggle();
     }
 
     eel.expose(dataPyDB)

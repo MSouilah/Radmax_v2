@@ -326,7 +326,6 @@
                                         <label>Fitting algorithm</label>
                                         <select  class="form-control" data-container="body" id="fitting_choice" name="fitting_choice">
                                             <option value=1>leastsq</option>
-                                            <option value=0>Simulated annealing (GSA)</option>
                                         </select>                
                                     </div>
                                     <div class="col-lg-2">
@@ -395,7 +394,7 @@
                                                         <button type="button" class="btn btn-primary disabled" id="dw_button_restore" onclick="restore_values(0)">DW values</button>
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <button type="button" class="btn btn-primary disabled" id="boh_button_restore" onclick="restore_values(2)">Restore both</button>
+                                                        <button type="button" class="btn btn-primary disabled" id="boh_button_restore" onclick="restore_values_both()">Restore both two</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -604,12 +603,12 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-9 mb-3 mb-sm-0">
-                                                <canvas id="overlay_strain" width="1600" height="900" style="position:absolute;pointer-events:none;"></canvas>
-                                                <canvas id="strain_canvas" width="1600" height="900" oncontextmenu="return false;"></canvas>
+                                                <canvas id="overlay_strain" width="800" height="450" style="position:absolute;pointer-events:none;"></canvas>
+                                                <canvas id="strain_canvas" width="800" height="450" oncontextmenu="return false;"></canvas>
                                             </div>
                                             <div class="col-sm-9 mb-3 mb-sm-0">
-                                                <canvas id="overlay_dw" width="1600" height="900" style="position:absolute;pointer-events:none;"></canvas>
-                                                <canvas id="dw_canvas" width="1600" height="900" oncontextmenu="return false;"></canvas>
+                                                <canvas id="overlay_dw" width="800" height="450" style="position:absolute;pointer-events:none;"></canvas>
+                                                <canvas id="dw_canvas" width="800" height="450" oncontextmenu="return false;"></canvas>
                                             </div>
                                         </div>
                                     </div>
@@ -638,8 +637,8 @@
                                             <Br>
                                         </div>
                                         <div class="row">
-                                            <canvas id="overlay_xrd" width="1600" height="900" style="position:absolute;pointer-events:none;"></canvas>
-                                            <canvas id="xrd_graph" width="1600" height="900" oncontextmenu="return false;"></canvas>
+                                            <canvas id="overlay_xrd" width="800" height="450" style="position:absolute;pointer-events:none;"></canvas>
+                                            <canvas id="xrd_graph" width="800" height="450" oncontextmenu="return false;"></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -1270,6 +1269,26 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modal_fit_ending_wrong" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Warning</h4>
+            </div>
+            <div class="modal-body">
+                <legend>Something goes wrong with the fit</legend>
+                <Br>
+                <label> The fit did not launch properly, please check your data, and coefficients.
+                </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script src="modules/graph.js"></script>
 <script src="modules/functions.js"></script>
