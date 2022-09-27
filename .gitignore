@@ -4,3 +4,4 @@ Radmax.ini
 activity.log
 examples - Copie/
 .gitignore
+__pycache__/
