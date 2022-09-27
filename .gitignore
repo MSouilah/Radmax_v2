@@ -5,3 +5,4 @@ activity.log
 examples - Copie/
 .gitignore/
 __pycache__/
+*.pyc
