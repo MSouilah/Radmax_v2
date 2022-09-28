@@ -14,6 +14,7 @@ Download zip file and extract it to your disk.
 RaDMaX<sup>2</sup> requires Python 3.x, SciPy, Numpy and LMFIT.
 Instructions for Windows and GNU/Linux are given below.
 You also need to have install chrome browser on your machine. Edge is also working on windows.
+The program works in both connected and offline mode.
 
 ## MS Windows
 1. For most users, especially on Windows and Mac, the easiest way to install scientific Python is to download **one** of these Python distributions, which includes most of the key packages:
