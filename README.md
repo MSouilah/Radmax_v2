@@ -13,6 +13,7 @@ Download zip file and extract it to your disk.
 
 RaDMaX<sup>2</sup> requires Python 3.x, SciPy, Numpy and LMFIT.
 Instructions for Windows and GNU/Linux are given below.
+You also need to have install chrome browser on your machine. Edge is also working on windows.
 
 ## MS Windows
 1. For most users, especially on Windows and Mac, the easiest way to install scientific Python is to download **one** of these Python distributions, which includes most of the key packages:
@@ -30,12 +31,12 @@ For other distributions please visit the [SciPy] (https://scipy.org) or [LMFIT] 
 
 ## Mac OSX
 1. Mac OS does not come with a package manager. You can use a third party package manager like [Macports](http://www.macports.org/) to install SciPy and LMFIT.
-Run (as root), for python 3.8 as exemple : `pip install scipy lmfit xrayutilities bottle bottle-websocket future pyparsing whichcraft tk`.
+Otherwise, run (as root), for python 3.8 as exemple : `pip install scipy lmfit xrayutilities bottle bottle-websocket future pyparsing whichcraft tk`.
 Once all the package installed, in a terminal, navigate to the "Radmax_2" folder and run the Radmax.py file with `python Radmax.py`.
 
 ## Development environment
 The RaDMaX<sup>2</sup> program has been developed on MS Windows 10 using python 3.8.10, Scipy 1.8.0, Numpy:1.21.5 and Lmfit 1.0.3.
-It has been tested on several GNU/Linux distributions including Debian 8 and Kubuntu 15.04.
+It has been tested on several GNU/Linux distributions.
 
 # Quick test of the program
 1. Launch Radmax.py.
