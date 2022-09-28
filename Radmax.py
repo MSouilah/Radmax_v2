@@ -49,7 +49,7 @@ if __name__ == "__main__":
                         '-b',
                         '-browser',
                         type=int,
-                        help="specifying what browser to use (default: chrome)\n1:chrome,\n2:edge,\2on,\n4:custom"
+                        help="specifying what browser to use (default: chrome)\n1:chrome,\n2:edge,\n3:electron"
                         )
 
     parser.add_argument(

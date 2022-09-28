@@ -468,7 +468,7 @@ class Main():
             eel.init('web')
         # self.read_init_file()
         eel.spawn(self.read_init_file())
-        if self.browser_choice != 4:
+        if self.browser_choice < 4:
             if self.browser_choice == 3:
                 eel.start(
                     'main.js',
@@ -482,9 +482,9 @@ class Main():
                     'index.html',
                     mode=browser,
                     port=8000,
-                    # cmdline_args=[
-                    #     # '--start-fullscreen',
-                    # ]
+                    cmdline_args=[
+                        '--start-fullscreen',
+                    ]
                 )
         else:
             sys.exit()
