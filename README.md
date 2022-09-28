@@ -36,10 +36,10 @@ Otherwise, run (as root), for python 3.8 as exemple : `pip install scipy lmfit x
 Once all the package installed, in a terminal, navigate to the "Radmax_v2" folder and run the Radmax.py file with `python Radmax.py`.
 
 ## Electron app
-The program is also working with [Electron](https://www.electronjs.org/) as GUI. Before using Electron, you need to install the node environnement system [Node](https://nodejs.org/en/download/).
-When its done, there are two mode. 1/ You install the electron package globally on your computer, `npm install electron --save-dev`, and then you launch RaDMaX<sup>2</sup> with this version of electron. 2/ You install a locally version of Electron in the RaDMaX<sup>2</sup> directory.
-This second method is the one to choose because Electron is in a permanent development and newer version of the Electron app sometimes break compatibility with old one, and RaDMaX<sup>2</sup> program might not work with recent Electron version.<Br>
-Instructions:<Br>
+The program is also working with [Electron](https://www.electronjs.org/) as GUI. Before using Electron, you need to install the Node.js environnement system [Node](https://nodejs.org/en/download/).
+When its done, there are two working mode. 1/ You install the electron package globally on your computer, `npm install electron --save-dev`, and then you launch RaDMaX<sup>2</sup> with this version of electron. 2/ You install a locally version of Electron in the RaDMaX<sup>2</sup> directory.
+This second method is the one to choose because Electron is in a permanent development and the last development versions of the Electron app sometimes break compatibility with old one, and RaDMaX<sup>2</sup> program might not be able to work with recent Electron version.<Br>
+Install instructions:<Br>
 In a terminal, navigate to the "Radmax_v2" folder and run `npm install --save-dev electron`. This will install all the Electron dependencies in a folder called "node_modules". The size of the directory is quite high, about 200MB. Then run `python Radmax.py -b3`.
 
 ## Development environment
