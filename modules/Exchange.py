@@ -9,8 +9,6 @@ from random import randint
 import shutil
 import tkinter as tk
 
-import time
-
 import Parameters as p4R
 from Parameters import P4Rm
 from Calcul import Calcul4Radmax
@@ -20,7 +18,7 @@ from DataBase import DataBaseUse
 from Fitting import Fitting4Radmax
 import Tk_module as tkm
 
-sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'eel'))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import eel
 
 a = P4Rm()

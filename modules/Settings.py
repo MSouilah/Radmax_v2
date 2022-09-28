@@ -78,8 +78,10 @@ class Sound_Launcher(Thread):
         elif self.case == 1:
             return
         elif self.case == 2:
-            path2music = os.path.join(p4R.music_path,
-                                      load_voice[self.random_music] + '.wav')
+            path2music = os.path.join(
+                p4R.music_path,
+                load_voice[self.random_music] + '.wav'
+            )
 
         if _platform == "linux" or _platform == "linux2":
             import subprocess
