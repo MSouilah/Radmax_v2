@@ -18,6 +18,7 @@ try:
     import numpy
     import lmfit
     import sqlite3
+    import xrayutilities
     print("***************************************")
     print("             RaDMaX\u00b2")
     print("         Version:%s" % p4R.version)
@@ -33,9 +34,9 @@ try:
     print("Numpy: %s" % numpy.__version__)
     print("Lmfit: %s" % (lmfit.__version__))
     print("Sqlite3: %s" % (sqlite3.sqlite_version))
+    print("Xrayutilities: %s" % (xrayutilities.__version__))
     print('Modules embedded with this application:')
     print("Eel: 0.14.0")
-    print("Xrayutilities: 1.7.3")
     print()
 except ImportError:
     print("Pay attention: scipy and numpy modules are required to run this program")
