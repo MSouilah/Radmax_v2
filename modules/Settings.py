@@ -116,8 +116,8 @@ class UpdateExampleFiles():
                     if "<WRITE PATH HERE>" in line:
                         xrd_path = os.path.join(example_path, d, d + '_XRD.txt')
                         if _platform == 'win32':
-                            newline = line.replace("/", "\\")
-                        newline = newline.replace("<WRITE PATH HERE>", xrd_path)
+                            line = line.replace("/", "\\")
+                        newline = line.replace("<WRITE PATH HERE>", xrd_path)
                         replaced_content += newline
                     else:
                         replaced_content += line

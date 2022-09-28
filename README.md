@@ -19,8 +19,8 @@ Instructions for Windows and GNU/Linux are given below.
  * [Anaconda](http://continuum.io/downloads) (recommended): A free distribution for the SciPy stack. Supports Linux, Windows and Mac. [Download.](https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-Windows-x86.exe)
  * [Python(x,y)](http://python-xy.github.io/) (not tested): A free distribution including the SciPy stack, based around the Spyder IDE. Windows only. [Download.](http://ftp.ntua.gr/pub/devel/pythonxy/Python(x,y)-2.7.10.0.exe)
  * [WinPython](http://winpython.github.io/) (not tested): A free distribution including the SciPy stack. Windows only. [Download.] (http://sourceforge.net/projects/winpython/files/WinPython_2.7/2.7.9.5/WinPython-32bit-2.7.9.5.exe/download)
-2. Alternativaly, you can install the dependencies using the pypi package manager, `pip install scipy, lmfit, bottle, bottle-websocket, future, pyparsing, whichcraft`. Pay attention with Python 3, sometimes you need to use pip3 (if you have python 2.x and 3.x installed on the same machine).
-3. Once all the package installed, execute the "Radmax.py" file. Alternatively, open a terminal (press "windows" and "r", type "cmd" [without commas] and press "Enter"). Navigate to the "Radmax_v2" folder and type `python Radmax.py`.
+2. Alternativaly, you can install the dependencies using the pypi package manager, `pip install scipy lmfit bottle bottle-websocket future pyparsing whichcraft`. Pay attention with Python 3, sometimes you need to use pip3 (if you have python 2.x and 3.x installed on the same machine).
+3. Once all the package installed, execute the "Radmax.py" file. Alternatively, open a terminal (press "windows" and "r", type "cmd" [without commas] and press "Enter"). Navigate to the "Radmax_2" folder and type `python Radmax.py`.
 
 ## GNU / Linux
 1. On most Linux systems the dependencies are available in the software repositories. For debian based systems run (as root): `apt-get install python python-scipy python-lmfit`. Numpy is normally installed along Scipy.
@@ -31,8 +31,8 @@ For other distributions please visit the [SciPy] (https://scipy.org) or [LMFIT] 
 
 ## Mac OSX
 1. Mac OS does not come with a package manager. You can use a third party package manager like [Macports](http://www.macports.org/) to install SciPy and LMFIT.
-Run (as root), for python 3.8 as exemple : `port install py38-numpy py38-scipy py38-lmfit`.
-Once all the package installed, in a terminal, navigate to the "Radmax_v2" folder and run the Radmax.py file with `python Radmax.py`.
+Run (as root), for python 3.8 as exemple : `pip install scipy lmfit bottle bottle-websocket future pyparsing whichcraft tk`.
+Once all the package installed, in a terminal, navigate to the "Radmax_2" folder and run the Radmax.py file with `python Radmax.py`.
 
 ## Development environment
 The RaDMaX<sup>2</sup> program has been developed on MS Windows 10 using python 3.8.10, Scipy 1.8.0, Numpy:1.21.5 and Lmfit 1.0.3.

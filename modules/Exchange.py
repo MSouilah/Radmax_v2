@@ -11,7 +11,6 @@ import tkinter as tk
 
 import time
 
-import eel
 import Parameters as p4R
 from Parameters import P4Rm
 from Calcul import Calcul4Radmax
@@ -20,6 +19,9 @@ from Settings import Sound_Launcher, UpdateExampleFiles
 from DataBase import DataBaseUse
 from Fitting import Fitting4Radmax
 import Tk_module as tkm
+
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'eel'))
+import eel
 
 a = P4Rm()
 b = Calcul4Radmax()
