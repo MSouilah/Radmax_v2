@@ -21,7 +21,7 @@ The program works in both connected and offline mode.
  * [Anaconda](http://continuum.io/downloads) (recommended): A free distribution for the SciPy stack. Supports Linux, Windows and Mac.
  * [WinPython](http://winpython.github.io/) (not tested): A free distribution including the SciPy stack. Windows only. [Download.] (https://sourceforge.net/projects/winpython/files/WinPython_3.8/3.8.12.3/)
 2. Alternativaly, you can install the dependencies using the pypi package manager, `pip install scipy lmfit xrayutilities bottle bottle-websocket future pyparsing whichcraft`. Pay attention with Python 3, sometimes you need to use pip3 (if you have python 2.x and 3.x installed on the same machine).
-3. Once all the package installed, execute the "Radmax.py" file. Alternatively, open a terminal (press "windows" and "r", type "cmd" [without commas] and press "Enter"). Navigate to the "Radmax_2" folder and type `python Radmax.py`.
+3. Once all the package installed, execute the "Radmax.py" file. Alternatively, open a terminal (press "windows" and "r", type "cmd" [without commas] and press "Enter"). Navigate to the "Radmax_v2" folder and type `python Radmax.py`.
 
 ## GNU / Linux
 1. On most Linux systems the dependencies are available in the software repositories. For debian based systems run (as root): `apt-get install python3-scipy python3-lmfit python3-xrayutilities python3-bottle python3-bottle-websocket python3-future python3-pyparsing python3-whichcraft` or `pip install scipy lmfit xrayutilities bottle bottle-websocket future pyparsing whichcraft`. Numpy is normally installed along Scipy.
@@ -33,7 +33,14 @@ For other distributions please visit the [SciPy] (https://scipy.org) or [LMFIT] 
 ## Mac OSX
 1. Mac OS does not come with a package manager. You can use a third party package manager like [Macports](http://www.macports.org/) to install SciPy and LMFIT.
 Otherwise, run (as root), for python 3.8 as exemple : `pip install scipy lmfit xrayutilities bottle bottle-websocket future pyparsing whichcraft tk`.
-Once all the package installed, in a terminal, navigate to the "Radmax_2" folder and run the Radmax.py file with `python Radmax.py`.
+Once all the package installed, in a terminal, navigate to the "Radmax_v2" folder and run the Radmax.py file with `python Radmax.py`.
+
+## Electron app
+The program is also working with [Electron](https://www.electronjs.org/) as GUI. Before using Electron, you need to install the node environnement system [Node](https://nodejs.org/en/download/).
+When its done, there are two mode. 1/ You install the electron package globally on your computer, `npm install electron --save-dev`, and then you launch RaDMaX<sup>2</sup> with this version of electron. 2/ You install a locally version of Electron in the RaDMaX<sup>2</sup> directory.
+This second method is the one to choose because Electron is in a permanent development and newer version of the Electron app sometimes break compatibility with old one, and RaDMaX<sup>2</sup> program might not work with recent Electron version.
+Instruction:
+In a terminal, navigate to the "Radmax_v2" folder and run `npm install --save-dev electron`. This will install all the Electron dependencies in a folder called "node_modules". The size of the directory is quite high, about 200MB. Then run `python .\Radmax.py -b3`.
 
 ## Development environment
 The RaDMaX<sup>2</sup> program has been developed on MS Windows 10 using python 3.8.10, Scipy 1.8.0, Numpy:1.21.5 and Lmfit 1.0.3.

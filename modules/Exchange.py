@@ -473,7 +473,7 @@ class Main():
                 eel.start(
                     'main.js',
                     mode='custom',
-                    cmdline_args=['C:/Users/souilp01/node_modules/electron/dist/electron.exe', '.'],
+                    cmdline_args= ['node_modules/electron/dist/electron.exe', '.'],
                     port=8000
                 )
             else:

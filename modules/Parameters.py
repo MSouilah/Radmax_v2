@@ -143,6 +143,10 @@ website_ = "http://aboulle.github.io/RaDMaX/"
 # test linux, change path and name of file in UpdateExampleFiles()
 # xrayutilities is not embeded anymore, need to install it
 # path to local modules eel corrected
+# begin test to reactive electron mode:
+# --> success to close window app add .destroy
+# --> still geventwebsocket, I need to find the source of error
+
 
 theme_choice = {
     0: "bootstrap5.1.2.min.css",

@@ -14,13 +14,13 @@ function createWindow () {
     width: 1920,
     height: 1200,
     // fullscreen: true,
-    icon: __dirname + "/web/img/icone.png",
+    icon: __dirname + "/web/img/icone_radmax_2.png",
     webPreferences: {
       nodeIntegration: false,
       preload: path.join(__dirname, 'preload.js')
     }
   })
-
+  console.log("Yoda")
   const menu = Menu.buildFromTemplate(exampleMenuTemplate());
   Menu.setApplicationMenu(menu);
 
@@ -42,18 +42,19 @@ function createWindow () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    const choice = require('electron').dialog.showMessageBoxSync(this,
-      {
+    let choice = dialog.showMessageBoxSync(this,
+        {
         type: 'question',
         buttons: ['Yes', 'No'],
         title: 'Confirm',
         message: 'Are you sure you want to quit?'
-      });
-    console.log(choice)
-    if (choice === 1) event.preventDefault();
+    });
+    if (choice == 1) {
+        event.preventDefault();
+      }else{
+        mainWindow.destroy();
+      }
   })
-
-  
 }
 
 if (process.platform === 'win32') {
@@ -77,10 +78,13 @@ app.whenReady().then(() => {
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
-  // On macOS it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
-  // OnExitApp();
-  // if (process.platform !== 'darwin') app.quit()
+    // On macOS it is common for applications and their menu bar
+    // to stay active until the user quits explicitly with Cmd + Q
+    // OnExitApp();
+    if (process.platform !== 'darwin' && app.listeners('window-all-closed').length === 1 && !option.interactive){
+        mainWindow.close();
+        app.quit();
+    }
 })
 
 app.on('activate', function () {
@@ -93,44 +97,18 @@ app.on('activate', function () {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 var OnExitApp = function(event) {
-  const choice = require('electron').dialog.showMessageBoxSync(mainWindow,
+  let choice = dialog.showMessageBoxSync(mainWindow,
     {
       type: 'question',
       buttons: ['Yes', 'No'],
       title: 'Confirm',
       message: 'Are you sure you want to quit?'
     });
-  console.log(choice)
-  if (choice === 1) {
+  if (choice == 1) {
     event.preventDefault();
   }else{
-    mainWindow = null;
-    app.quit();
+    mainWindow.destroy();
   }
-
-  // dialog.showMessageBox(mainWindow,
-  //   {
-  //     type: 'question',
-  //     buttons: ['Yes', 'No'],
-  //     title: 'Confirm exit',
-  //     message: 'Are you sure you want to quit?'
-  //  }).then
-  // (
-  //     result => {
-  //       if(result.response== 0){
-  //         mainWindow = null;
-  //         if (process.platform !== 'darwin') {
-  //           app.quit();
-  //         }
-  //        }
-  //         // 1 for No
-  //        if(result.response== 1){
-  //           event.preventDefault();
-  //        }
-  //     }
-  // ).catch(err => {
-  //   console.log(err)
-  // });
 };
 
 var showOpen = function(event) {
