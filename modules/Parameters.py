@@ -16,7 +16,7 @@ Application_name = "RaDMaX"
 filename = "Radmax"
 version = "2022.09"
 Application_version = " - " + version
-last_modification = "26/09/2022"
+last_modification = "28/09/2022"
 log_filename = "activity"
 ExperimentFile = 'ExperimentFile'
 RadmaxFile = 'RadmaxFile'
@@ -112,6 +112,7 @@ website_ = "http://aboulle.github.io/RaDMaX/"
 # - Asymetric pv: work in progress
 # - begin test horizontaly displacement
 # - database to e entirely remain to win size and interactivity
+# - remove of GSA (work to do later)
 
 
 # modification 23/08/2022:
@@ -138,7 +139,10 @@ website_ = "http://aboulle.github.io/RaDMaX/"
 # bugs fixes: warning message from export fit if no fit available, warning message if problem in suppression from databse,
 # warning message if save/save poject without loading xrd data
 
-
+# modification 28/09/2022:
+# test linux, change path and name of file in UpdateExampleFiles()
+# xrayutilities is not embeded anymore, need to install it
+# path to local modules eel corrected
 
 theme_choice = {
     0: "bootstrap5.1.2.min.css",
@@ -204,7 +208,6 @@ struc_factors = os.path.join(current_dir, 'f0f1f2')
 log_file_path = os.path.join(current_dir, log_filename + ".log")
 music_path = os.path.join(current_dir, 'sounds')
 database_path = os.path.join(current_dir, 'database')
-
 
 """
 Definition of the variables names used in the program
