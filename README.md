@@ -23,7 +23,7 @@ Instructions for Windows and GNU/Linux are given below.
 3. Once all the package installed, execute the "Radmax.py" file. Alternatively, open a terminal (press "windows" and "r", type "cmd" [without commas] and press "Enter"). Navigate to the "Radmax_2" folder and type `python Radmax.py`.
 
 ## GNU / Linux
-1. On most Linux systems the dependencies are available in the software repositories. For debian based systems run (as root): `apt-get install python python-scipy python-lmfit` or `pip install scipy lmfit xrayutilities bottle bottle-websocket future pyparsing whichcraft`. Numpy is normally installed along Scipy.
+1. On most Linux systems the dependencies are available in the software repositories. For debian based systems run (as root): `apt-get install python3-scipy python3-lmfit python3-xrayutilities python3-bottle python3-bottle-websocket python3-future python3-pyparsing python3-whichcraft` or `pip install scipy lmfit xrayutilities bottle bottle-websocket future pyparsing whichcraft`. Numpy is normally installed along Scipy.
 2. Because browser have some limitations with opening and saving files, RaDMaX<sup>2</sup> passed through these using Python Tkinter module. Unlike Windows, on most Linux systems Tkinter is not installed with python. For debian based systems run (as root): `apt-get install python3-tk`.
 3. In a terminal, run the Radmax.py file with `python Radmax.py`.
 
