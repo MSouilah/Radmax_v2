@@ -16,9 +16,8 @@ Instructions for Windows and GNU/Linux are given below.
 
 ## MS Windows
 1. For most users, especially on Windows and Mac, the easiest way to install scientific Python is to download **one** of these Python distributions, which includes most of the key packages:
- * [Anaconda](http://continuum.io/downloads) (recommended): A free distribution for the SciPy stack. Supports Linux, Windows and Mac. [Download.](https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-Windows-x86.exe)
- * [Python(x,y)](http://python-xy.github.io/) (not tested): A free distribution including the SciPy stack, based around the Spyder IDE. Windows only. [Download.](http://ftp.ntua.gr/pub/devel/pythonxy/Python(x,y)-2.7.10.0.exe)
- * [WinPython](http://winpython.github.io/) (not tested): A free distribution including the SciPy stack. Windows only. [Download.] (http://sourceforge.net/projects/winpython/files/WinPython_2.7/2.7.9.5/WinPython-32bit-2.7.9.5.exe/download)
+ * [Anaconda](http://continuum.io/downloads) (recommended): A free distribution for the SciPy stack. Supports Linux, Windows and Mac.
+ * [WinPython](http://winpython.github.io/) (not tested): A free distribution including the SciPy stack. Windows only. [Download.] (https://sourceforge.net/projects/winpython/files/WinPython_3.8/3.8.12.3/)
 2. Alternativaly, you can install the dependencies using the pypi package manager, `pip install scipy lmfit xrayutilities bottle bottle-websocket future pyparsing whichcraft`. Pay attention with Python 3, sometimes you need to use pip3 (if you have python 2.x and 3.x installed on the same machine).
 3. Once all the package installed, execute the "Radmax.py" file. Alternatively, open a terminal (press "windows" and "r", type "cmd" [without commas] and press "Enter"). Navigate to the "Radmax_2" folder and type `python Radmax.py`.
 
