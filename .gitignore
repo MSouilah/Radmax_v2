@@ -6,4 +6,4 @@ examples - Copie/
 .gitignore/
 __pycache__/
 *.pyc
-/modules/database/RadmaxDB.db
+./modules/database/RadmaxDB.db
