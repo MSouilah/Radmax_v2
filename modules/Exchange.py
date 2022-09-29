@@ -275,7 +275,7 @@ def load_graph(msg, path):
                     "y": tt
                 }
                 p4R.xrd2graph.append(tp)
-            tmp = [msg, a.ParamDict['th4live'].tolist(), a.ParamDict['Iobs'].tolist(), p4R.xrd2graph, p4R.limit_graph]
+            tmp = ["load_xrd", a.ParamDict['th4live'].tolist(), a.ParamDict['Iobs'].tolist(), p4R.xrd2graph, p4R.limit_graph]
             eel.data_graph_py(tmp)
         else:
             eel.check_input_file()

@@ -107,10 +107,14 @@ window.addEventListener('DOMContentLoaded', () => {
             window.api.receive("OpenOptionsRadmax", (data) => {
                 open_general_option();
             });
+            window.api.receive("OpenColorsRadmax", (data) => {
+                open_graph_colors();
+            });
             window.api.receive("AboutRadmax", (data) => {
                 open_about_modal();
             });
             window.api.receive("load_project_from_main", (data) => {
+                console.log("v,svmls")
                 eel.load_project("load_project_from_main", data);
             });
             window.api.receive("load_xrd_from_main", (data) => {
@@ -134,14 +138,14 @@ window.addEventListener('DOMContentLoaded', () => {
     eel.expose(change_api_title)
     function change_api_title(data){
         if(isElectron()){
-            window.api.send("change_title", title);
+            window.api.send("change_title", data[0]);
         }else{
             if (document.title != data[0]) {
                 document.title = "RaDMaX 2 - " + data[0];
-                path_name.innerHTML = data[1];
-                current_name.innerHTML = data[0];
             }
         }
+        path_name.innerHTML = data[1];
+        current_name.innerHTML = data[0];
     }
 
     eel.expose(check_input_file)

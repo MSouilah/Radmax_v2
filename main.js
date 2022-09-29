@@ -28,7 +28,7 @@ function createWindow () {
   mainWindow.loadURL('http://localhost:8000/index.html');
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+//   mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -324,9 +324,15 @@ const exampleMenuTemplate = () => [
     label: "Options",
     submenu: [
       {
-        label: "Database and Sounds",
+        label: "Main options",
         click: (item) => {
           mainWindow.webContents.send('OpenOptionsRadmax');
+        }
+      },
+      {
+        label: "Graph colors",
+        click: (item) => {
+          mainWindow.webContents.send('OpenColorsRadmax');
         }
       },
       {

@@ -145,7 +145,8 @@ website_ = "http://aboulle.github.io/RaDMaX/"
 # path to local modules eel corrected
 # begin test to reactive electron mode:
 # --> success to close window app add .destroy
-# --> still geventwebsocket, I need to find the source of error
+# --> correction call between electron menu and javascript
+
 
 
 theme_choice = {

@@ -34,6 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
             "SaveFitData",
             "LogFile",
             "OpenOptionsRadmax",
+            "OpenColorsRadmax",
             "AboutRadmax"
           ];
           if (validChannels.includes(channel)) {
